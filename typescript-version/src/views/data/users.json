@@ -1,0 +1,262 @@
+[
+    {
+        "id": 1,
+        "name": "Nguyễn Văn A",
+        "password": "Password123@",
+        "gmail": "nguyenvana@gmail.com",
+        "phone": "0987654321",
+        "money": 50000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 1,
+        "name": "Nguyễn Văn A",
+        "password": "Password123@",
+        "gmail": "nguyenvana@gmail.com",
+        "phone": "0987654321",
+        "money": 50000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 1,
+        "name": "Nguyễn Văn A",
+        "password": "Password123@",
+        "gmail": "nguyenvana@gmail.com",
+        "phone": "0987654321",
+        "money": 50000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 1,
+        "name": "Nguyễn Văn A",
+        "password": "Password123@",
+        "gmail": "nguyenvana@gmail.com",
+        "phone": "0987654321",
+        "money": 50000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 1,
+        "name": "Nguyễn Văn A",
+        "password": "Password123@",
+        "gmail": "nguyenvana@gmail.com",
+        "phone": "0987654321",
+        "money": 50000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 1,
+        "name": "Nguyễn Văn A",
+        "password": "Password123@",
+        "gmail": "nguyenvana@gmail.com",
+        "phone": "0987654321",
+        "money": 50000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 1,
+        "name": "Nguyễn Văn A",
+        "password": "Password123@",
+        "gmail": "nguyenvana@gmail.com",
+        "phone": "0987654321",
+        "money": 50000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 1,
+        "name": "Nguyễn Văn A",
+        "password": "Password123@",
+        "gmail": "nguyenvana@gmail.com",
+        "phone": "0987654321",
+        "money": 50000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 2,
+        "name": "Trần Thị B",
+        "password": "Password456@",
+        "gmail": "tranb@gmail.com",
+        "phone": "0981234567",
+        "money": 60000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 3,
+        "name": "Trịnh Đức Hùng",
+        "password": "Gacon123@",
+        "gmail": "duchung234@gmail.com",
+        "phone": "0985693949",
+        "money": 63100000,
+        "rolename": "User",
+        "idrole": 2
+    },
+    {
+        "id": 4,
+        "name": "Lê Văn C",
+        "password": "Password789@",
+        "gmail": "levanc@gmail.com",
+        "phone": "0981122334",
+        "money": 70000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 5,
+        "name": "Phạm Thị D",
+        "password": "Password101@",
+        "gmail": "phamthid@gmail.com",
+        "phone": "0982233445",
+        "money": 80000000,
+        "rolename": "User",
+        "idrole": 2
+    },
+    {
+        "id": 6,
+        "name": "Vũ Thị E",
+        "password": "Password102@",
+        "gmail": "vuthie@gmail.com",
+        "phone": "0983344556",
+        "money": 90000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 7,
+        "name": "Đặng Văn F",
+        "password": "Password103@",
+        "gmail": "dangvanf@gmail.com",
+        "phone": "0984455667",
+        "money": 100000000,
+        "rolename": "User",
+        "idrole": 2
+    },
+    {
+        "id": 8,
+        "name": "Bùi Thị G",
+        "password": "Password104@",
+        "gmail": "buithig@gmail.com",
+        "phone": "0985566778",
+        "money": 110000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 9,
+        "name": "Hồ Văn H",
+        "password": "Password105@",
+        "gmail": "hovanf@gmail.com",
+        "phone": "0986677889",
+        "money": 120000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 10,
+        "name": "Ngô Thị I",
+        "password": "Password106@",
+        "gmail": "ngothii@gmail.com",
+        "phone": "0987788990",
+        "money": 130000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 11,
+        "name": "Lý Văn J",
+        "password": "Password107@",
+        "gmail": "lyvanj@gmail.com",
+        "phone": "0988899001",
+        "money": 140000000,
+        "rolename": "User",
+        "idrole": 2
+    },
+    {
+        "id": 12,
+        "name": "Đỗ Thị K",
+        "password": "Password108@",
+        "gmail": "dothik@gmail.com",
+        "phone": "0989900112",
+        "money": 150000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 13,
+        "name": "Phan Văn L",
+        "password": "Password109@",
+        "gmail": "phanvanl@gmail.com",
+        "phone": "0990011223",
+        "money": 160000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 14,
+        "name": "Võ Thị M",
+        "password": "Password110@",
+        "gmail": "vothim@gmail.com",
+        "phone": "0991122334",
+        "money": 170000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 15,
+        "name": "Trương Văn N",
+        "password": "Password111@",
+        "gmail": "truongvann@gmail.com",
+        "phone": "0992233445",
+        "money": 180000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 16,
+        "name": "Dương Thị O",
+        "password": "Password112@",
+        "gmail": "duongthio@gmail.com",
+        "phone": "0993344556",
+        "money": 190000000,
+        "rolename": "User",
+        "idrole": 1
+    },
+    {
+        "id": 17,
+        "name": "Nguyễn Văn P",
+        "password": "Password113@",
+        "gmail": "nguyenvanp@gmail.com",
+        "phone": "0994455667",
+        "money": 200000000,
+        "rolename": "User",
+        "idrole": 2
+    },
+    {
+        "id": 18,
+        "name": "Trần Thị Q",
+        "password": "Password114@",
+        "gmail": "tranthiq@gmail.com",
+        "phone": "0995566778",
+        "money": 210000000,
+        "rolename": "User",
+        "idrole": 3
+    },
+    {
+        "id": 19,
+        "name": "Trịnh Đức R",
+        "password": "Password115@",
+        "gmail": "trinhducr@gmail.com",
+        "phone": "0996677889",
+        "money": 220000000,
+        "rolename": "User",
+        "idrole": 2
+    }
+]

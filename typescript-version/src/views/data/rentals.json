@@ -1,0 +1,14 @@
+[
+    {
+        "id" : 1,
+        "title" : "tro",
+        "addres" : "Ha Noi",
+        "price" : 123,
+        "description" : "phong tro cho thue",
+        "width" : 100,
+        "height" : 100,
+        "iduser" : 1,
+        "room" : 4,
+        "emptyoom" : 1
+    }   
+]
