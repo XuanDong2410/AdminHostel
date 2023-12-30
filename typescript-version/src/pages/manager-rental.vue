@@ -95,7 +95,7 @@
                               v-model="hotelShow.title"
                               prepend-inner-icon="mdi-checkbook"
                               :rules="[data.rules.required]"
-                              label="Name"
+                              label="Title"
                               type="text"
                               :readonly="true"
                             ></v-text-field>
@@ -303,7 +303,7 @@
           color="black"
         >
           <img
-          class="w-20 rounded-lg"
+            class="w-20 rounded-lg"
             v-if="item.image"
             :src="item.image"
           />
