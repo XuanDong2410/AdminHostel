@@ -28,9 +28,9 @@
                 /></VCol>
                 <VCol>
                   <VListItemTitle
-                    class="mx2 pa-2"
+                    class="mx2 pa-2 text-[rgb(48,129,208)] font-weight-bold d-flex justify-center"
                     v-text="item.title" />
-                  <VListItemTitle class="text-[rgb(246,246,29)]">{{ item.price }} VNĐ</VListItemTitle>
+                  <VListItemTitle class="text-[rgb(253,132,31)] font-weight-bold">{{ item.price }} VNĐ</VListItemTitle>
                   <VListItemAction>
                     <VChip
                       size="small"
@@ -47,19 +47,21 @@
                       {{ item.numberrates }} lượt đánh giá
                     </VListItemSubtitle>
                   </VListItemAction>
-                  <VListItemSubtitle v-text="item.descriptions" />
-                  <VRow>
-                    <VCol cols="3"> <v-icon>mdi-heart-outline</v-icon> <VListItemSubtitle v-text="item.love" /></VCol>
-                    <VCol cols="3"
+                  <VListItemSubtitle class="my-2 " v-text="item.descriptions" />
+                  <VRow class="d-flex justify-center align-center ">
+                    <VCol cols="3" class="d-flex justify-center align-center">
+                       <v-icon>mdi-heart-outline</v-icon> <VListItemSubtitle v-text="item.love" /></VCol>
+                    <VCol cols="3" class="d-flex justify-center align-center"
                       ><v-icon>mdi-comment-outline</v-icon> <VListItemSubtitle v-text="item.comment"
                     /></VCol>
-                    <VCol cols="6"
+                    <VCol cols="6" class="d-flex justify-center align-center"
                       ><v-icon>mdi-account-edit-outline</v-icon
                       ><VListItemSubtitle
                         v-text="item.username"
                         class="mx-1 px-1"
-                    /></VCol> </VRow
-                ></VCol>
+                    /></VCol>
+                   </VRow>
+                  </VCol>
               </VRow>
             </v-sheet>
           </VCol>
@@ -67,7 +69,7 @@
       </VContainer>
     </VList>
 
-    <VCardTitle> Top Phòng trọ cho sinh viên </VCardTitle>
+    <VCardTitle> Các phòng trọ được yêu thích nhất</VCardTitle>
     <VList
       v-if="!error && !loading"
       :items="studenthostels"
@@ -96,32 +98,24 @@
                 /></VCol>
                 <VCol>
                   <VListItemTitle
-                    class="mx2 pa-2"
+                    class="mx2 pa-2 text-[rgb(48,129,208)] font-weight-bold d-flex justify-center"
                     v-text="item.title"
                   />
-                  <VListItemTitle class="text-[rgb(246,246,29)]">{{ item.price }} VNĐ</VListItemTitle>
-                  <VListItemAction>
-                    <VChip
-                      size="small"
-                      class="text-capitalize pa-4 mx2"
-                      :color="statusColor[status[item.rate]]"
+                  <VListItemTitle class="text-[rgb(253,132,31)] font-weight-bold">{{ item.price }} VNĐ</VListItemTitle>
+
+                  <VListItemSubtitle class="mt-2" v-text="item.descriptions" />
+                  <VRow class="mt-3">
+                    <VCol
+                      cols="5"
+                      class="d-flex justify-center align-center"
                     >
-                      {{ item.rate }}
-                    </VChip>
-                    <VListItemSubtitle
-                      class="red--text text--lighten-1"
-                      size="small"
-                    >
-                      {{ item.numberrates }} lượt đánh giá
-                    </VListItemSubtitle>
-                  </VListItemAction>
-                  <VListItemSubtitle v-text="item.descriptions" />
-                  <VRow>
-                    <VCol cols="3"> <v-icon>mdi-heart-outline</v-icon> <VListItemSubtitle v-text="item.love" /></VCol>
-                    <VCol cols="3"
-                      ><v-icon>mdi-comment-outline</v-icon> <VListItemSubtitle v-text="item.comment"
-                    /></VCol>
-                    <VCol cols="6"
+                      <v-icon class=" text-[rgb(254,0,0)]">mdi-heart-outline</v-icon>
+                      <VListItemSubtitle v-text="item.love" />
+                    </VCol>
+
+                    <VCol
+                      cols="7"
+                      class="d-flex justify-center align-center"
                       ><v-icon>mdi-account-edit-outline</v-icon
                       ><VListItemSubtitle
                         v-text="item.username"
@@ -139,7 +133,7 @@
 </template>
 <script lang="ts" setup>
 import { API_URL } from '@/constants'
-import { StudentHostelReadonly, TopHostelReadonly } from '@/types/Numbers'
+import { LoveHostelReadonly, TopHostelReadonly } from '@/types/Numbers'
 import { useRequest } from 'vue-request'
 const { data: tophostels } = useRequest<TopHostelReadonly[]>(() =>
   fetch(`${API_URL}/tophostels`).then(res => res.json()),
@@ -149,13 +143,22 @@ const {
   data: studenthostels,
   loading,
   error,
-} = useRequest<StudentHostelReadonly[]>(() => fetch(`${API_URL}/studenthostels`).then(res => res.json()))
+} = useRequest<LoveHostelReadonly[]>(() => fetch(`${API_URL}/lovehostels`).then(res => res.json()))
 watch(error, error => {
   if (error) {
     // TODO: add control error
     console.warn(error)
   }
 })
+const data = {
+  trip: {
+    name: '',
+    location: null,
+    start: null,
+    end: null,
+  },
+  locations: ['Australia', 'Barbados', 'Chile', 'Denmark', 'Ecuador', 'France'],
+}
 const status: Record<TopHostelReadonly['rate'], number> = {
   5: 1,
   4.5: 2,

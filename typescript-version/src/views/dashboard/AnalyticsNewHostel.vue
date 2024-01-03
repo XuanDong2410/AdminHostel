@@ -17,19 +17,24 @@
       >
         <VRow class="d-flex justify-center">
           <img
-            class="rounded-lg w-60%"
+            class="rounded-lg w-50%"
             v-if="item.image"
             :src="item.image"
           />
         </VRow>
-        <VRow>
+        <VRow class="">
           <VCol class="m-3">
             <VListItemTitle
               class="mx2 pa-2 text-center font-weight-bold"
               v-text="item.title"
             />
-            <v-btn class="text-[rgb(246,246,29)] ml-5" color="">{{ item.price }} VNĐ</v-btn>
-            <VListItemAction class="m-3">
+            
+            <v-btn
+              class="d-flex justify-center text-[rgb(253,132,31)] ml-5"
+              color=""
+              >{{ item.price }} VNĐ</v-btn
+            >
+            <VListItemAction class="m-3 d-flex justify-center">
               <v-btn
                 size="small"
                 :color="statusColor[status[item.rate]]"
@@ -38,24 +43,41 @@
               </v-btn>
               <v-btn
                 size="small"
-                class=" text-[rgb(8,136,96)]" 
-                color=""               
+                class="text-[rgb(8,136,96)]"
+                color=""
               >
-                {{ item.numberrates}} Lượt đánh giá
-            </v-btn>
+                {{ item.numberrates }} Lượt đánh giá
+              </v-btn>
             </VListItemAction>
             <VListItemSubtitle
               class="m2"
               v-text="item.descriptions"
             />
-            <VRow class="m-1 d-flex justify-center">
-              
-              <VCol cols="2"> <v-icon>mdi-heart-outline</v-icon> <VListItemSubtitle v-text="item.love" /></VCol>
-              <VCol cols="2"><v-icon>mdi-comment-outline</v-icon> <VListItemSubtitle v-text="item.comment" /></VCol>
-              <VCol cols="4"
-                ><v-icon>mdi-account-edit-outline</v-icon><VListItemSubtitle v-text="item.username"
+            <VRow class="d-flex justify-center align-center">
+              <VCol
+                cols="3"
+                class="d-flex justify-center align-center"
+              >
+                <v-icon>mdi-heart-outline</v-icon> <VListItemSubtitle class="ml-1" v-text="item.love"
+              /></VCol>
+              <VCol
+                cols="3"
+                class="d-flex justify-center align-center"
+                ><v-icon>mdi-comment-outline</v-icon> <VListItemSubtitle class="ml-1" v-text="item.comment"
+              /></VCol>
+              <VCol
+                cols="6"
+                class="d-flex justify-center align-center"
+                ><v-icon>mdi-account-edit-outline</v-icon
+                ><VListItemSubtitle
+                  v-text="item.username"
+                  class="mx-1 px-1 ml-1"
               /></VCol>
             </VRow>
+            <VAlertTitle
+              class="mx2 pa-2 text-center"
+              v-text="'Ngày đăng:  ' + item.time"
+            />
           </VCol>
         </VRow>
       </v-carousel-item>

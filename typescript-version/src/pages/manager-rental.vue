@@ -80,7 +80,7 @@
                 >
                   <v-card>
                     <v-card-title>
-                      <span class="text-h5">Hostel</span>
+                      <p class="text-h5">Hostel</p>
                     </v-card-title>
 
                     <v-card-text>
@@ -175,19 +175,41 @@
                             sm="6"
                             md="12"
                           >
-                            <v-text-field
+                            <v-textarea
+                              no-resize
+                              rows="1"
+                              label="Address"
+                              v-model="hotelShow.address"
+                              prepend-inner-icon="mdi-home-city-outline"
+                              variant="outlined"
+                              :readonly="true"
+                            ></v-textarea>
+                            <!-- <v-expansion-panel>
+                             
+                              <v-expansion-panel-text>
+                                <v-text-field
+                                  v-model="hotelShow.address"
+                                  hide-details
+                                  placeholder="Caribbean Cruise"
+                                ></v-text-field>
+                              </v-expansion-panel-text>
+                            </v-expansion-panel> -->
+
+                            <!-- <v-textarea
+                              default-height="20"
                               v-model="hotelShow.address"
                               :rules="[data.rules.required]"
                               prepend-inner-icon="mdi-home-city-outline"
                               label="Address"
                               type="text"
                               :readonly="true"
-                            ></v-text-field>
+                            >
+                            </v-textarea> -->
                           </v-col>
                           <v-col
                             cols="12"
-                            sm="6"
-                            md="6"
+                            sm="5"
+                            md="4"
                           >
                             <v-text-field
                               v-model="hotelShow.room"
@@ -200,8 +222,8 @@
                           </v-col>
                           <v-col
                             cols="12"
-                            sm="6"
-                            md="6"
+                            sm="5"
+                            md="4"
                           >
                             <v-text-field
                               v-model="hotelShow.emptyroom"
@@ -214,16 +236,16 @@
                           </v-col>
                           <v-col
                             cols="12"
-                            sm="6"
-                            md="12"
+                            sm="5"
+                            md="4"
                           >
                             <v-text-field
-                              v-model="hotelShow.functionRoom"
+                              v-model="hotelShow.imageproperties.length"
                               :rules="[data.rules.required]"
-                              prepend-inner-icon="mdi-store-search-outline"
-                              label="Special"
-                              type="text"
-                              :readonly="true"
+                              prepend-inner-icon="mdi-image-outline"
+                              label="Images"
+                              type="button"
+                              @click="dialogImage = true"
                             ></v-text-field>
                           </v-col>
                           <v-col
@@ -231,14 +253,33 @@
                             sm="6"
                             md="12"
                           >
-                            <v-text-field
+                            <v-textarea
+                            no-resize
+                            rows="1"
+                              v-model="hotelShow.functionRoom"
+                              :rules="[data.rules.required]"
+                              prepend-inner-icon="mdi-store-search-outline"
+                              label="Special"
+                              type="text"
+                              :readonly="true"
+                            ></v-textarea>
+                          </v-col>
+                          <v-col
+                            cols="12"
+                            sm="6"
+                            md="12"
+                          >
+                            <v-textarea
+                              overflow-auto
+                              no-rezise
+                              rows="1"
                               v-model="hotelShow.description"
                               :rules="[data.rules.required]"
                               prepend-inner-icon="mdi-subtitles-outline"
                               label="Description"
                               type="text"
                               :readonly="true"
-                            ></v-text-field>
+                            ></v-textarea>
                           </v-col>
                         </v-row>
                       </v-container>
@@ -269,6 +310,58 @@
               </v-col>
             </v-row>
             <p v-else>Hack it thoi</p>
+            <v-dialog
+              v-model="dialogImage"
+              class="w-250"
+            >
+              <VRow v-if="hotelShow">
+                <VCol
+                  col="12"
+                  md="12"
+                >
+                  <v-card class="relative">
+                    <v-icon
+                      class="absolute right-0 m-2"
+                      @click="dialogImage = false"
+                      >mdi-close</v-icon
+                    >
+                    <v-card-title class="text-h5">List Image</v-card-title>
+                    <v-carousel
+                      cycle
+                      hide-delimiters
+                      :items="hotelShow.imageproperties"
+                      show-arrows="hover"
+                    >
+                      <v-carousel-item v-for="items in hotelShow.imageproperties">
+                        <!-- <VRow class="d-flex justify-center mt-10" >
+                          <VCol cols="12" sm="8">
+                            <img
+                              class="w-100% h-50"
+                              :src="items"
+                            />
+                          </VCol>
+                        </VRow> -->
+
+                        <img
+                          class="absolute left-25% w-120 h-100 m-4"
+                          :src="items"
+                        />
+                      </v-carousel-item>
+                    </v-carousel>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                        color="blue-darken-1"
+                        variant="text"
+                        @click="dialogImage = false"
+                        >Cancel
+                      </v-btn>
+                      <v-spacer></v-spacer>
+                    </v-card-actions>
+                  </v-card>
+                </VCol>
+              </VRow>
+            </v-dialog>
           </v-dialog>
           <v-dialog
             v-model="dialogDelete"
@@ -298,21 +391,11 @@
         </v-toolbar>
       </template>
       <template #item.image="{ item }">
-        <v-image
-          size="50px"
-          color="black"
-        >
-          <img
-            class="w-20 rounded-lg"
-            v-if="item.image"
-            :src="item.image"
-          />
-          <v-icon
-            v-else
-            size="40px"
-            >solar:user-circle-bold-duotone</v-icon
-          >
-        </v-image>
+        <img
+          class="w-20 rounded-lg"
+          v-if="item.image"
+          :src="item.image"
+        />
       </template>
       <template v-slot:item.actions="{ item }">
         <v-icon
@@ -340,9 +423,10 @@
 import { API_URL } from '@/constants'
 import { useToastStore } from '@/stores/toast'
 import { Hostel, HostelReadonly } from '@/types/Hostel'
-import Chart_post_hostel from '@/views/dashboard/Chart_post_hostel.vue'
 import chart_Rate from '@/views/dashboard/Chart_Rate.vue'
+import Chart_post_hostel from '@/views/dashboard/Chart_post_hostel.vue'
 import { useRequest } from 'vue-request'
+import type { VForm } from 'vuetify/components/VForm'
 const toastStore = useToastStore()
 
 const data = {
@@ -390,7 +474,7 @@ const {
   })[]
 >(
   () =>
-    fetch(`${API_URL}/hostels`)
+    fetch(`${API_URL}/hostel`)
       .then(res => res.json() as Promise<HostelReadonly[]>)
       .then(hostels =>
         hostels.map(item =>
@@ -412,8 +496,7 @@ watch(error, error => {
 
 const hotelShow = ref<Exclude<typeof hostels.value, undefined>[0x0] | null>(null)
 const dialogDelete = ref(false)
-
-import type { VForm } from 'vuetify/components/VForm'
+const dialogImage = ref(false)
 const vFormAddRef = ref<VForm>()
 
 const idHostelRequestDelete = ref<number | null>(null)

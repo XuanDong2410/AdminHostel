@@ -1,9 +1,9 @@
+import router from '@/router'
 import { createAuth } from 'vue-auth3'
 import driverAuthBearer from 'vue-auth3/drivers/auth/bearer'
 import driverHttpFetch from 'vue-auth3/drivers/http/fetch'
-
 export const auth = createAuth({
-  // plugins: {router},
+  plugins: { router },
   fetchData: {
     enabled: true, // send a request to `/api/user` if the user information stored in the cookie is not visible
     cache: true, //save user information to localStorage for use

@@ -1,13 +1,9 @@
-// export interface Number {
-//   name: string
-//   data: number[]
-//   time: string
-// }
-//export type NumberReadonly = Readonly<Number>
 export interface NumberCost {
-  name: string
-  data: number[]
-  time: string
+  // price: string
+  // value: {
+    name: string
+    data: number[]
+  //}
 }
 export type NumberCostReadonly = Readonly<NumberCost>
 export interface NumberMostCity {
@@ -50,20 +46,16 @@ export interface TopHostel {
   price: string
 }
 export type TopHostelReadonly = Readonly<TopHostel>
-export interface StudentHostel {
+export interface LoveHostel {
   id: number
   title: string
-  rate: number
-  numberrates: number
   love: number
-  comment: number
   image: string
-  //iduser : number
   username: string
   descriptions: string
   price: string
 }
-export type StudentHostelReadonly = Readonly<StudentHostel>
+export type LoveHostelReadonly = Readonly<LoveHostel>
 export interface NewHostel {
   id: number
   title: string
@@ -76,5 +68,6 @@ export interface NewHostel {
   username: string
   descriptions: string
   price: string
+  time: string
 }
 export type NewHostelReadonly = Readonly<NewHostel>

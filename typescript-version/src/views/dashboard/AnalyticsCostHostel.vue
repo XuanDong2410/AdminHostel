@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { API_URL } from '@/constants'
-import { NumberCost } from '@/types/Numbers'
+import { NumberCostReadonly } from '@/types/Numbers'
 import { useRequest } from 'vue-request'
 import VueApexCharts from 'vue3-apexcharts'
+
 const {
   data: numbercosts,
   loading,
   error,
-} = useRequest<NumberCost[]>(() => fetch(`${API_URL}/numbercosts`).then(res => res.json()))
+} = useRequest<NumberCostReadonly[]>(() => fetch(`${API_URL}/numbercosts`).then(res => res.json()))
 watch(error, error => {
   if (error) {
     // TODO: add control error
     console.warn(error)
   }
 })
+
 const data = computed(() => {
   return {
     //series: numbers.value,
@@ -32,7 +34,7 @@ const data = computed(() => {
       },
       title: {
         text: 'Tỉ lệ tương tác giữa các giá tiền',
-        align : 'left',
+        align: 'left',
       },
       responsive: [
         {
@@ -65,10 +67,10 @@ const data = computed(() => {
         type: 'text',
         categories: [
           'Dưới 1.000.000vnđ',
-          '5.000.000vnđ',
-          '10.000.000vnđ',
-          '15.000.000vnđ',
-          '20.000.000vnđ',
+          '1-5.000.000vnđ',
+          '5-10.000.000vnđ',
+          '10-20.000.000vnđ',
+          '20-35.000.000vnđ',
           'Trên 35.000.000vnđ',
         ],
       },

@@ -78,11 +78,11 @@ var options = {
 }
 const series = [
   {
-    name: 'Post',
+    name: 'Posted',
     data: [31, 40, 128, 51, 42, 109, 100],
   },
   {
-    name: 'Hostel',
+    name: 'Rented',
     data: [31, 20, 12, 11, 22, 19, 12],
   },
 ]
@@ -124,7 +124,7 @@ const data = {
     },
     yaxis: {
       title: {
-        text: '$ (numbers)',
+        text: '(numbers) Hotels',
       },
     },
     fill: {
@@ -133,7 +133,7 @@ const data = {
     tooltip: {
       y: {
         formatter: function (val: unknown) {
-          return '$ ' + val
+          return val + ' Hostels'
         },
       },
     },

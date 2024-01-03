@@ -240,7 +240,7 @@ const {
   loading,
   error,
 } = useRequest<UserReadonly[]>(() =>
-  fetch(`${API_URL}/users`)
+  fetch(`${API_URL}/user`)
     .then(res => res.json())
     .then(users => shallowReactive(users)),
 )

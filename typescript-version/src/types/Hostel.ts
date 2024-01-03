@@ -27,6 +27,7 @@ export interface Hostel {
     end: number
   }
   image: string | null
+  imageproperties: string[]
   iduser: number
   username: string
 }

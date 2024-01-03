@@ -149,7 +149,7 @@ async function login() {
         email: form.value.email,
         password: form.value.password,
       }),
-      redirect: 'pages/dashboard',
+      redirect: undefined,
     })
 
     toastStore.create({
